@@ -1,0 +1,24 @@
+version: '2'
+services:
+  backendbase:
+    build: ./web
+    command: /bin/true
+    volumes:
+      - ./web:/code
+  db:
+    image: postgres
+  web:
+    image: keepscore_backendbase
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes_from:
+      - backendbase
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  webtest:
+    image: keepscore_backendbase
+    command: python manage.py test
+    volumes_from:
+      - backendbase
+      
