@@ -1,10 +1,10 @@
 version: '2'
 services:
   backendbase:
-    build: ./web
+    build: .
     command: /bin/true
     volumes:
-      - ./web:/code
+      - .:/code
   db:
     image: postgres
   web:
