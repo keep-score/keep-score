@@ -1,5 +1,5 @@
 #keep-score
-
+[![Build Status](https://travis-ci.org/keep-score/keepscore.svg?branch=master)](https://travis-ci.org/keep-score/keepscore)
 ##Development
 To bring up dev environment run: 
 ```
